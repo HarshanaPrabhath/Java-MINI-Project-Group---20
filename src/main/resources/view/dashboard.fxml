@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<StackPane prefWidth="800" prefHeight="600"
+        xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.java_lms_group_20.Controller.DashboardController">
+
+    <VBox alignment="CENTER" spacing="20">
+        <Label text="Welcome to Dashboard" style="-fx-font-size: 24px;"/>
+        <Label fx:id="welcomeLabel"/>
+    </VBox>
+
+</StackPane>

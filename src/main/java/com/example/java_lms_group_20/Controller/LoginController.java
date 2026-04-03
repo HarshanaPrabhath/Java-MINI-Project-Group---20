@@ -1,10 +1,14 @@
 package com.example.java_lms_group_20.Controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LoginController {
 
@@ -30,8 +34,21 @@ public class LoginController {
             return;
         }
 
-        // Minimal demo success (replace later with DB check)
-        messageLabel.setText("Login successful! Welcome, " + username + ".");
-        messageLabel.setStyle("-fx-text-fill: #28a745;");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/dashboard.fxml"));
+            Parent root = loader.load();
+
+            DashboardController controller = loader.getController();
+            controller.setUsername(username);
+
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+
+            stage.setScene(new Scene(root));
+            stage.setTitle("Dashboard");
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
