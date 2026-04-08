@@ -29,3 +29,42 @@ CREATE TABLE user_roles (
 INSERT INTO role (roleID, roleName) VALUES (1, 'ADMIN');
 INSERT INTO role (roleID, roleName) VALUES (2, 'LECTURER');
 INSERT INTO role (roleID, roleName) VALUES (3, 'UNDERGRADUATE');
+INSERT INTO role (roleID, roleName) VALUES (4, 'TO');
+
+
+CREATE TABLE lecturer (
+                          userID INT PRIMARY KEY,
+                          department VARCHAR(100),
+                          specialization VARCHAR(100),
+
+                          FOREIGN KEY (userID) REFERENCES user(userID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE technical_officer (
+                                   userID INT PRIMARY KEY,
+                                   lab VARCHAR(100),
+                                   shift VARCHAR(50),
+
+
+
+
+                                   FOREIGN KEY (userID) REFERENCES user(userID) ON DELETE CASCADE
+);
+
+CREATE TABLE undergraduate (
+                               userID INT PRIMARY KEY,
+                               studentID VARCHAR(50) UNIQUE NOT NULL,
+                               degreeProgram VARCHAR(100),
+                               level INT,
+                               gpa DECIMAL(3,2),
+
+                               FOREIGN KEY (userID) REFERENCES user(userID) ON DELETE CASCADE
+);
+
+CREATE TABLE course (
+                        courseID INT AUTO_INCREMENT PRIMARY KEY,
+                        courseCode VARCHAR(20) UNIQUE NOT NULL,
+                        courseName VARCHAR(100) NOT NULL,
+                        credits INT NOT NULL
+);

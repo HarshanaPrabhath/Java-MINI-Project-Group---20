@@ -24,21 +24,22 @@
 
             <Region prefHeight="40"/>
 
-            <Button maxWidth="Infinity" alignment="BASELINE_LEFT" text="Dashboard"
-                    style="-fx-background-color: #1e293b; -fx-text-fill: white; -fx-padding: 12; -fx-background-radius: 8; -fx-cursor: hand;"/>
-
-            <Button fx:id="btnRegisterUndergrad" onAction="#showUndergradRegister" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Undergraduate Register"
+            <Button fx:id="btnShowDashboard" onAction="#showDashboard" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Dashboard"
                     style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12; -fx-cursor: hand;"/>
 
-            <Button fx:id="btnRegisterLecturer" onAction="#showLecturerRegister" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Undergraduate Register"
+            <Button fx:id="btnRegisterUndergrad" onAction="#showUndergradRegister" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Student Register"
                     style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12; -fx-cursor: hand;"/>
 
-            <Button fx:id="btnRegisterTO" onAction="#showTORegister" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Undergraduate Register"
+            <Button fx:id="btnRegisterLecturer" onAction="#showLecturerRegister" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Lecturer Register"
+                    style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12; -fx-cursor: hand;"/>
+
+            <Button fx:id="btnRegisterTO" onAction="#showTORegister" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Technical Officer Register"
+                    style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12; -fx-cursor: hand;"/>
+
+            <Button fx:id="btnRegisterCourse" onAction="#showCourseRegister" maxWidth="Infinity" alignment="BASELINE_LEFT" text="Add Course"
                     style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12; -fx-cursor: hand;"/>
 
 
-            <Button maxWidth="Infinity" alignment="BASELINE_LEFT" text="Add Course"
-                    style="-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12; -fx-cursor: hand;"/>
 
             <Region VBox.vgrow="ALWAYS"/>
 

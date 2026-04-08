@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" style="-fx-background-color: white; -fx-background-radius: 15;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.java_lms_group_20.Controller.CourseRegistrationController">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Register Course"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="20" vgap="15">
+
+        <VBox spacing="5" GridPane.rowIndex="0">
+            <Label text="Course Code"/>
+            <TextField fx:id="txtCourseCode"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.rowIndex="1">
+            <Label text="Course Name"/>
+            <TextField fx:id="txtCourseName"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.rowIndex="2">
+            <Label text="Credits"/>
+            <TextField fx:id="txtCredits"/>
+        </VBox>
+
+    </GridPane>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Label fx:id="statusLabel"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Register Course" onAction="#handleSaveCourse"/>
+    </HBox>
+
+</VBox>

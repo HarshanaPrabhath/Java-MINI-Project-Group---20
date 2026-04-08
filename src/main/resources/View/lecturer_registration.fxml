@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" style="-fx-background-color: white; -fx-background-radius: 15;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.java_lms_group_20.Controller.LecturerRegistrationController">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <Label text="Register Lecturer"
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+
+    <GridPane hgap="20" vgap="15">
+
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
+
+        <!-- Basic Info -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <Label text="First Name"/>
+            <TextField fx:id="txtFirstName"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <Label text="Last Name"/>
+            <TextField fx:id="txtLastName"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label text="Username"/>
+            <TextField fx:id="txtUsername"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label text="Email"/>
+            <TextField fx:id="txtEmail"/>
+        </VBox>
+
+        <Separator GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2"/>
+
+        <!-- Lecturer Info -->
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <Label text="Department"/>
+            <TextField fx:id="txtDepartment"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label text="Specialization"/>
+            <TextField fx:id="txtSpecialization"/>
+        </VBox>
+
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Label fx:id="statusLabel"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Register Lecturer" onAction="#handleSaveLecturer"/>
+    </HBox>
+
+</VBox>
