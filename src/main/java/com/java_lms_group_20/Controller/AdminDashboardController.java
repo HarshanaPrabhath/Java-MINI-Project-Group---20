@@ -2,6 +2,7 @@ package com.java_lms_group_20.Controller;
 
 import com.java_lms_group_20.Model.User;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,11 +13,18 @@ import java.io.IOException;
 
 public class AdminDashboardController {
 
-    @FXML private Label welcomeLabel;
-    @FXML private StackPane contentArea;
-    @FXML private Button btnRegisterUndergrad;
-    @FXML private Button btnRegisterLecturer;
-    @FXML private Button btnRegisterTO;
+    @FXML
+    private Label welcomeLabel;
+    @FXML
+    private StackPane contentArea;
+    @FXML
+    private Button btnRegisterUndergrad;
+    @FXML
+    private Button btnRegisterLecturer;
+    @FXML
+    private Button btnRegisterTO;
+    @FXML
+    private Button btnRegisterCourse;
 
     private User currentUser;
 
@@ -29,21 +37,62 @@ public class AdminDashboardController {
         });
     }
 
-    @FXML
-    private void showUndergradRegister() {
-        // 1. Reset all buttons to default style first
+    public void showDashboard() {
         resetButtonStyles();
 
-        // 2. Apply "Active" background to this button (Indigo color)
         btnRegisterUndergrad.setStyle("-fx-background-color: #6366f1; -fx-text-fill: white; -fx-padding: 12; -fx-background-radius: 8;");
 
-        // 3. Switch the view
+
+        switchView("/View/admin_dashboard_home.fxml");
+    }
+
+    @FXML
+    private void showUndergradRegister() {
+
+        resetButtonStyles();
+
+        btnRegisterUndergrad.setStyle("-fx-background-color: #6366f1; -fx-text-fill: white; -fx-padding: 12; -fx-background-radius: 8;");
+
+
         switchView("/View/undergraduate_registration.fxml");
     }
 
+    @FXML
+    public void showLecturerRegister() {
+        resetButtonStyles();
+
+        btnRegisterLecturer.setStyle("-fx-background-color: #6366f1; -fx-text-fill: white; -fx-padding: 12; -fx-background-radius: 8;");
+
+        switchView("/View/lecturer_registration.fxml");
+    }
+
+
+    @FXML
+    public void showTORegister() {
+        resetButtonStyles();
+
+        btnRegisterTO.setStyle("-fx-background-color: #6366f1; -fx-text-fill: white; -fx-padding: 12; -fx-background-radius: 8;");
+
+        switchView("/View/technical_officer_registration.fxml");
+
+    }
+
+    @FXML
+    public void showCourseRegister() {
+        resetButtonStyles();
+
+        btnRegisterCourse.setStyle("-fx-background-color: #6366f1; -fx-text-fill: white; -fx-padding: 12; -fx-background-radius: 8;");
+
+        switchView("/View/course_registration.fxml");
+    }
+
+
+
     private void resetButtonStyles() {
-        // Set back to transparent/default slate color
         btnRegisterUndergrad.setStyle("-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12;");
+        btnRegisterLecturer.setStyle("-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12;");
+        btnRegisterTO.setStyle("-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12;");
+        btnRegisterCourse.setStyle("-fx-background-color: transparent; -fx-text-fill: #94a3b8; -fx-padding: 12;");
     }
 
     private void switchView(String fxmlPath) {
@@ -71,4 +120,7 @@ public class AdminDashboardController {
             }
         });
     }
+
+
 }
+
