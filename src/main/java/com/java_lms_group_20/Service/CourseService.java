@@ -2,28 +2,29 @@ package com.java_lms_group_20.Service;
 
 import com.java_lms_group_20.Model.Course;
 import com.java_lms_group_20.Repository.CourseRepository;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CourseService {
-
     private final CourseRepository repository = new CourseRepository();
 
+    public List<Course> getStudentCourses(String studentID) {
+        if (studentID == null || studentID.trim().isEmpty()) {
+            return new ArrayList<>();
+        }
+        // Updated to return the full Course object list
+        return repository.getCoursesByStudentID(studentID.trim());
+    }
+
     public void registerCourse(Course course) throws Exception {
+        if (!repository.save(course)) throw new Exception("Course registration failed.");
+    }
 
-        if (course.getCourseCode() == null || course.getCourseCode().isEmpty()) {
-            throw new Exception("Course code is required.");
-        }
+    public void updateCourse(Course course) throws Exception {
+        if (!repository.update(course)) throw new Exception("Course update failed.");
+    }
 
-        if (course.getCourseName() == null || course.getCourseName().isEmpty()) {
-            throw new Exception("Course name is required.");
-        }
-
-        if (course.getCredits() <= 0) {
-            throw new Exception("Credits must be greater than 0.");
-        }
-
-        boolean success = repository.save(course);
-        if (!success) {
-            throw new Exception("Database error: Could not save course.");
-        }
+    public void deleteCourse(String courseCode) throws Exception {
+        if (!repository.delete(courseCode)) throw new Exception("Course deletion failed.");
     }
 }

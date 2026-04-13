@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" style="-fx-background-color: white; -fx-background-radius: 15;"
+      xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.java_lms_group_20.Controller.Admin.TechnicalOfficerRegistrationController">
+
+    <padding> <Insets top="30" right="30" bottom="30" left="30"/> </padding>
+
+    <HBox alignment="CENTER_LEFT">
+        <Label text="Manage Technical Officer" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #0f172a;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button onAction="#clearFields" text="Clear Form" style="-fx-background-color: transparent; -fx-text-fill: #64748b; -fx-cursor: hand;"/>
+    </HBox>
+
+    <GridPane hgap="20" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50"/>
+            <ColumnConstraints percentWidth="50"/>
+        </columnConstraints>
+
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2">
+            <Label text="Officer ID (Use TO-XXXX format)" style="-fx-font-weight: bold; -fx-text-fill: #475569;"/>
+            <TextField fx:id="txtTechOfficerID" promptText="e.g. TO-0001" style="-fx-padding: 10; -fx-background-radius: 5; -fx-border-color: #e2e8f0;"/>
+        </VBox>
+
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <Label text="First Name" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtFirstName" style="-fx-padding: 8;"/>
+        </VBox>
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Label text="Last Name" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtLastName" style="-fx-padding: 8;"/>
+        </VBox>
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <Label text="Username" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtUsername" style="-fx-padding: 8;"/>
+        </VBox>
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Label text="Email" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtEmail" style="-fx-padding: 8;"/>
+        </VBox>
+        <VBox spacing="5" GridPane.columnIndex="0" GridPane.rowIndex="3">
+            <Label text="Department" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtDepartment" style="-fx-padding: 8;"/>
+        </VBox>
+        <VBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Label text="Technical Skills" style="-fx-font-weight: bold;"/>
+            <TextField fx:id="txtSkills" style="-fx-padding: 8;"/>
+        </VBox>
+    </GridPane>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 20 0 0 0;">
+        <Label fx:id="statusLabel" style="-fx-font-size: 13px;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button onAction="#handleDeleteTO" text="Delete" style="-fx-background-color: #fee2e2; -fx-text-fill: #ef4444; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"/>
+        <Button onAction="#handleUpdateTO" text="Update Info" style="-fx-background-color: #f1f5f9; -fx-text-fill: #475569; -fx-font-weight: bold; -fx-padding: 10 20; -fx-background-radius: 5; -fx-cursor: hand;"/>
+        <Button onAction="#handleSaveTO" text="Register TO" style="-fx-background-color: #6366f1; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 25; -fx-background-radius: 5; -fx-cursor: hand;"/>
+    </HBox>
+</VBox>
